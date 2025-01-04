@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-header {
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.back-link {
+    color: #4158d0;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.back-link:hover {
+    transform: translateX(-5px);
+}
+
+.header-title {
+    font-size: 28px;
+    margin: 0;
+    background: linear-gradient(45deg, #4158d0, #c850c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Update container margin untuk header fixed */
+.container {
+    margin-top: 130px; /* Sesuaikan dengan tinggi header */
+}
+
+/* Media query untuk responsive */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 0 20px;
+    }
+    
+    .header-title {
+        font-size: 24px;
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px; /* Diperbesar dari 1000px */
+    margin: 70px auto; /* Diperbesar margin */
+    padding: 0 40px; /* Diperbesar padding */
+}
+
+.profile-card {
+    background: white;
+    border-radius: 25px; /* Diperbesar radius */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.profile-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-header {
+    position: relative;
+    height: 300px; /* Diperbesar dari 200px */
+}
+
+.profile-cover {
+    height: 100%;
+    background: linear-gradient(45deg, #4158d0, #c850c0);
+}
+
+.profile-avatar {
+    position: absolute;
+    bottom: -70px; /* Disesuaikan posisi */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.avatar {
+    width: 180px; /* Diperbesar dari 100px */
+    height: 180px; /* Diperbesar dari 100px */
+    border-radius: 50%;
+    border: 8px solid white; /* Diperbesar border */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.profile-info {
+    text-align: center;
+    margin-top: 90px; /* Disesuaikan dengan avatar yang lebih besar */
+}
+
+.name {
+    font-size: 36px; /* Diperbesar dari 24px */
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease;
+}
+
+.name.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.title {
+    color: #666;
+    font-size: 24px; /* Diperbesar dari 16px */
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.5s ease;
+}
+
+.title.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.profile-body {
+    padding: 50px; /* Diperbesar dari 30px */
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0; /* Diperbesar margin */
+    padding: 30px 0; /* Tambah padding */
+    border-bottom: 2px solid #eee; /* Tambah border */
+}
+
+.stat {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    padding: 0 30px; /* Tambah padding */
+}
+
+.stat.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.counter {
+    font-size: 42px; /* Diperbesar dari 24px */
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.stat i {
+    font-size: 32px; /* Ukuran icon */
+    color: #4158d0;
+}
+
+.skill-bars {
+    margin: 40px 0; /* Diperbesar margin */
+}
+
+.skill {
+    margin: 25px 0; /* Diperbesar margin */
+}
+
+.skill-name {
+    margin-bottom: 12px; /* Diperbesar margin */
+    display: block;
+    font-size: 20px; /* Diperbesar font */
+    font-weight: 500;
+}
+
+.skill-bar {
+    height: 15px; /* Diperbesar height */
+    background: #eee;
+    border-radius: 8px; /* Diperbesar radius */
+    overflow: hidden;
+}
+
+.skill-level {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(45deg, #4158d0, #c850c0);
+    transition: width 1.5s ease;
+}
+
+.profile-social {
+    display: flex;
+    justify-content: center;
+    gap: 35px; /* Diperbesar gap */
+    margin-top: 50px; /* Diperbesar margin */
+    padding: 30px 0; /* Tambah padding */
+}
+
+.social-icon {
+    color: #666;
+    font-size: 36px; /* Diperbesar dari 24px */
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(0);
+    padding: 15px; /* Tambah padding */
+}
+
+.social-icon.animate {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.social-icon:hover {
+    color: #4158d0;
+    transform: translateY(-5px); /* Diperbesar efek hover */
+}
+
+/* Tambahan untuk konten bio */
+.profile-bio {
+    padding: 30px 0;
+    margin: 30px 0;
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+}
+
+.profile-bio h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.bio-text {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Media Queries untuk Responsiveness */
+@media (max-width: 992px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .profile-body {
+        padding: 30px;
+    }
+
+    .counter {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .stat {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+    }
+
+    .avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .name {
+        font-size: 28px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+}
